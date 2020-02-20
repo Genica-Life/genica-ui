@@ -1,4 +1,4 @@
-const chain = 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906';
+const chain = '5edba2817f22e78659b946bb040f57306b9046fa8724f9dfd4c9615e4389a9d1';
 export const environment = {
     production: true,
     appName: 'EOSweb',
@@ -17,15 +17,15 @@ export const environment = {
         verbose: false
     },
     frontConfig: {
-       coin: 'EOS',
+       coin: 'GNC',
        bp: 'bp.json',
        tokenContract: 'eosio.token',
-       totalBalance: 'EOS',
+       totalBalance: 'GNC',
        convertToUSD: true,
        customBalance: false,
        logo: '/assets/images/eosweb.png',
        name: {
-          big: 'eos',
+          big: 'gnc',
           small: 'web'
        },
        nets: [{ name: 'Mainnet', url: 'https://eosweb.net', active: true },

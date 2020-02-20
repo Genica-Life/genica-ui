@@ -11,7 +11,7 @@
     <input type="search" placeholder="Search by block, tx, account, address" [(ngModel)]="search" (keyup)="onKey($event)">
   </div>
   <ul class="pull-right main-nav-middle">
-    <li *ngIf="!frontConfig?.customBalance"><button mat-button color="basic" routerLink="wallet" [ngClass]="{'nav-active': activeMenu() === '/wallet'}" class="mobile-no">wallet</button></li>
+    <!-- <li *ngIf="!frontConfig?.customBalance"><button mat-button color="basic" routerLink="wallet" [ngClass]="{'nav-active': activeMenu() === '/wallet'}" class="mobile-no">wallet</button></li>
     <li *ngIf="!frontConfig?.customBalance"><button mat-button color="basic" routerLink="vote" [ngClass]="{'nav-active': activeMenu() === '/vote'}" class="mobile-no">vote</button></li>
     <li *ngIf="!frontConfig?.customBalance"><button mat-button color="basic" routerLink="analytics" [ngClass]="{'nav-active': activeMenu() === '/analytics'}">Analytics</button></li>
     <li *ngIf="!frontConfig?.customBalance"><button mat-button color="basic" routerLink="ram" [ngClass]="{'nav-active': activeMenu()  === '/ram'}">Ram</button></li>
@@ -21,7 +21,7 @@
         <mat-menu #menu="matMenu">
           <a *ngFor="let net of networks;" href="{{net?.url}}" mat-menu-item>{{net.name}}</a>
         </mat-menu>
-    </li>
+    </li> -->
     <li>
         <a class="telegram-button" (click)="darkEnable(!darkTheme)">
           <i class="fas fa-moon" *ngIf="!darkTheme"></i>
@@ -34,7 +34,7 @@
 <main-tcustomize-charts></main-tcustomize-charts>
 <router-outlet></router-outlet>
 
-<footer>
+<!-- <footer>
   <div class="container">
   <div class="pull-left">Copyright © 2018 EOSweb <span *ngIf="!frontConfig?.disableVoteDonation">Donation - <a routerLink="/account/{{frontConfig?.voteDonationAcc}}" class="color-green"><strong>{{frontConfig?.voteDonationAcc}}</strong></a></span></div>
   <ul class="pull-right">
@@ -44,7 +44,7 @@
       <li><a href="mailto:dev.eosweb.net@gmail.com">Support</a></li>
   </ul>
    </div>
-</footer>
+</footer> -->
 
 <link rel="stylesheet" href="/assets/css/dark.css" *ngIf="darkTheme">
 

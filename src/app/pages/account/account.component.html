@@ -16,11 +16,11 @@
 					<strong>{{ balance?.toLocaleString() }} {{frontConfig?.totalBalance}}</strong> 
 					<span *ngIf="frontConfig?.convertToUSD"> / </span> 
 					<small *ngIf="frontConfig?.convertToUSD">{{ (balance * eosRate?.RAW[frontConfig.coin]?.USD?.PRICE).toLocaleString() }} USD</small>
-					<a href="https://changenow.io/exchange?amount=1&from=eos&link_id=ea69546af2da50&to=usdterc20" rel="noopener" target="_blank" mat-raised-button color="primary" style="margin-left: 25px;" *ngIf="frontConfig?.coin === 'EOS'">Exchange Now</a>
+					<!-- <a href="https://changenow.io/exchange?amount=1&from=eos&link_id=ea69546af2da50&to=usdterc20" rel="noopener" target="_blank" mat-raised-button color="primary" style="margin-left: 25px;" *ngIf="frontConfig?.coin === 'EOS'">Exchange Now</a> -->
 				</div>
 			</div>
 			
-			<div class="col-sm-12 block-info-line" *ngIf="!frontConfig?.customBalance">
+			<!-- <div class="col-sm-12 block-info-line" *ngIf="!frontConfig?.customBalance">
 				<div class="col-sm-3">
 					<strong class="block-info-header">Unstaked:</strong>
 				</div>
@@ -36,7 +36,7 @@
 				<div class="col-sm-9">
 					<small><strong>{{ (frontConfig?.coin !== 'WAX') ? mainData?.voter_info?.staked / 10000 : mainData?.voter_info?.staked / 100000000 }} {{frontConfig?.coin}}</strong></small>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="col-sm-12 block-info-line" *ngIf="mainData?.refund_request && !frontConfig?.customBalance">
 				<div class="col-sm-3">
@@ -158,7 +158,7 @@
 				</div>
 			</div>
 
-			<div class="col-sm-12 block-info-line">
+			<!-- <div class="col-sm-12 block-info-line">
 				<mat-accordion>
 				  <mat-expansion-panel>
 				    <mat-expansion-panel-header>
@@ -195,7 +195,7 @@
 				    <ngx-json-viewer [json]="mainData"></ngx-json-viewer>
 				  </mat-expansion-panel>
 				</mat-accordion>
-			</div>
+			</div> -->
 
 			<div class="col-sm-12 block-info-line">
 				<mat-tab-group>

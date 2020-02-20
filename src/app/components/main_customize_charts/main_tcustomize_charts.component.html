@@ -2,7 +2,7 @@
 <div class="container">
 <div class="row main-custom-chart-container">
     
-    <div class="col-sm-4 chart-child-container customize-containers-not-active customize-containers-active grid-cs-5-inline" [style.width]="frontConfig?.convertToUSD ? '' : '19.68%'" *ngIf="frontConfig?.convertToUSD">
+    <!-- <div class="col-sm-4 chart-child-container customize-containers-not-active customize-containers-active grid-cs-5-inline" [style.width]="frontConfig?.convertToUSD ? '' : '19.68%'" *ngIf="frontConfig?.convertToUSD">
       <div class="col-xs-8 no-padding first-container-widget">
        <div class="color-grey-text">
         {{frontConfig.coin}} - usd 
@@ -37,38 +37,38 @@
             </ngx-charts-line-chart> 
           </div>        
       </div> 
-    </div>
+    </div> -->
     
-    <div class="col-sm-2 draggble chart-child-container customize-containers-not-active grid-cs-5-inline" [style.width]="frontConfig?.convertToUSD ? '' : '19.68%'">
+    <!-- <div class="col-sm-2 draggble chart-child-container customize-containers-not-active grid-cs-5-inline" [style.width]="frontConfig?.convertToUSD ? '' : '19.68%'">
        <div class="color-grey-text">Ram price </div> 
        <div class="chart-child-container-dollar">
           <div class="pull-left color-green"> {{ ramPrice }} </div>
            <small style="margin-left: 5px"> {{frontConfig?.coin}}/kb </small>
        </div> 
-    </div>
+    </div> -->
 
-    <div class="col-sm-2 draggble chart-child-container customize-containers-not-active grid-cs-5-inline" [style.width]="frontConfig?.convertToUSD ? '' : '19.68%'">
+    <div class="col-sm-3 draggble chart-child-container customize-containers-not-active grid-cs-5-inline" [style.width]="frontConfig?.convertToUSD ? '' : '19.68%'">
        <div class="color-grey-text">Accounts</div> 
        <div class="chart-child-container-dollar">
           <div class="pull-left color-green"> {{ aggragationData?.accounts?.toLocaleString() }}</div>
        </div> 
     </div>
 
-    <div class="col-sm-2 draggble chart-child-container customize-containers-not-active grid-cs-5-inline" [style.width]="frontConfig?.convertToUSD ? '' : '19.68%'">
+    <div class="col-sm-3 draggble chart-child-container customize-containers-not-active grid-cs-5-inline" [style.width]="frontConfig?.convertToUSD ? '' : '19.68%'">
        <div class="color-grey-text">Blocks</div>
        <div class="chart-child-container-dollar">
           <div class="pull-left color-green"> {{ blockchainData?.head_block_num?.toLocaleString() }}</div>
        </div>
     </div>
 
-    <div class="col-sm-2 draggble chart-child-container customize-containers-not-active grid-cs-5-inline" [style.width]="frontConfig?.convertToUSD ? '' : '19.68%'">
+    <div class="col-sm-3 draggble chart-child-container customize-containers-not-active grid-cs-5-inline" [style.width]="frontConfig?.convertToUSD ? '' : '19.68%'">
        <div class="color-grey-text">Actions</div>
        <div class="chart-child-container-dollar">
           <div class="pull-left color-green"> {{ aggragationData?.actions?.toLocaleString() }}</div>
        </div> 
     </div>  
     
-    <div class="col-sm-2 draggble chart-child-container customize-containers-not-active grid-cs-5-inline" [style.width]="frontConfig?.convertToUSD ? '' : '19.68%'">
+    <div class="col-sm-3 draggble chart-child-container customize-containers-not-active grid-cs-5-inline" [style.width]="frontConfig?.convertToUSD ? '' : '19.68%'">
        <div class="color-grey-text">Producer</div> 
        <div class="chart-child-container-dollar">
           <div class="pull-left color-green"> 
@@ -77,7 +77,7 @@
        </div> 
     </div>
 
-    <div class="col-sm-12">
+    <!-- <div class="col-sm-12">
       <div class="pull-left container-tps">
            <div class="color-grey-text pull-left tps-text">TPS: </div>
            <div class="pull-left color-green"> {{ TPSliveTx }} <small>live</small></div>
@@ -96,7 +96,7 @@
           <small *ngIf="!frontConfig?.disableVoteDonation">vote for us: </small> 
           <strong *ngIf="!frontConfig?.disableVoteDonation"><a routerLink="/vote" class="color-green">{{frontConfig?.voteDonationAcc}}</a></strong>
       </h3>
-    </div>
+    </div> -->
 
     <!--<div class="col-sm-2 chart-child-container customize-container grid-cs-5-inline" [style.width]="frontConfig?.convertToUSD ? '' : '19.68%'">
       <a class="customize-button text-center"> 

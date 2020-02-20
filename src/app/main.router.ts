@@ -40,38 +40,38 @@ export const routes: Routes = [
     path: 'producer/:id', 
     component: ProducerComponent 
   },
-  { 
-    path: 'analytics', 
-    component: AnalyticsPageComponent 
-  },
+  // { 
+  //   path: 'analytics', 
+  //   component: AnalyticsPageComponent 
+  // },
   { 
     path: 'accounts', 
     component: AnalyticsPageComponent 
   },
-  {
-    path: 'ram', 
-    component: RamPageComponent 
-  },
+  // {
+  //   path: 'ram', 
+  //   component: RamPageComponent 
+  // },
   { 
     path: 'transaction/:id', 
     component: TransactionPageComponent 
   },
-  { 
-    path: 'wallet', 
-    component: WalletPageComponent 
-  },
-  { 
-    path: 'vote', 
-    component: VotePageComponent 
-  },
-  { 
-    path: 'tokens', 
-    component: TokensPageComponent 
-  },
-  {
-    path: "widget/ram",
-    component: WidgetComponent
-  },
+  // { 
+  //   path: 'wallet', 
+  //   component: WalletPageComponent 
+  // },
+  // { 
+  //   path: 'vote', 
+  //   component: VotePageComponent 
+  // },
+  // { 
+  //   path: 'tokens', 
+  //   component: TokensPageComponent 
+  // },
+  // {
+  //   path: "widget/ram",
+  //   component: WidgetComponent
+  // },
   { 
     path: 'notfound', 
     component: SoonComponent 
