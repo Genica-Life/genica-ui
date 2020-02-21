@@ -16,11 +16,13 @@ services:
   eosweb:
     build: .    
     ports: 
-      - 3039:3039
+      - 80:3039
       - 9615:9615
     restart: always
     links:
       - mongodb
     volumes:
       - ./config.js:/home/eosweb/config.js
+
+
 
