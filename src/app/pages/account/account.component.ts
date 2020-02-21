@@ -54,7 +54,7 @@ export class AccountPageComponent implements OnInit, OnDestroy{
   		this.http.get(`/api/v1/get_account/${accountId}`)
   				 .subscribe((res: any) => {
                           this.mainData = res;
-                          this.balance = this.mainData.core_liquid_balance;
+                          this.balance = this.mainData.core_liquid_balance.split(' ')[0];
                           // this.getBalance(accountId);
                           this.time = this.moment(this.mainData.created).format('MMMM Do YYYY, h:mm:ss a');
                           this.getActions(this.mainData.account_name, this.position);

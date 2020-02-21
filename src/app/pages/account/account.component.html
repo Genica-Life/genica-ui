@@ -14,8 +14,8 @@
 				</div>
 				<div class="col-sm-9">
 					<strong>{{ balance?.toLocaleString() }} {{frontConfig?.totalBalance}}</strong> 
-					<span *ngIf="frontConfig?.convertToUSD"> / </span> 
-					<small *ngIf="frontConfig?.convertToUSD">{{ (balance * eosRate?.RAW[frontConfig.coin]?.USD?.PRICE).toLocaleString() }} USD</small>
+					<!-- <span *ngIf="frontConfig?.convertToUSD"> / </span> 
+					<small *ngIf="frontConfig?.convertToUSD">{{ (balance * eosRate?.RAW[frontConfig.coin]?.USD?.PRICE).toLocaleString() }} USD</small> -->
 					<!-- <a href="https://changenow.io/exchange?amount=1&from=eos&link_id=ea69546af2da50&to=usdterc20" rel="noopener" target="_blank" mat-raised-button color="primary" style="margin-left: 25px;" *ngIf="frontConfig?.coin === 'EOS'">Exchange Now</a> -->
 				</div>
 			</div>
@@ -91,7 +91,7 @@
 				</div>
 			</div>
 
-			<div class="col-sm-12 block-info-line" *ngIf="tokensArray?.balances?.length && !frontConfig?.customBalance">
+			<!-- <div class="col-sm-12 block-info-line" *ngIf="tokensArray?.balances?.length && !frontConfig?.customBalance">
 				<div class="col-sm-3">
 					<strong class="block-info-header">Tokens:</strong>
 				</div>
@@ -103,7 +103,7 @@
 						</strong>
 					</span>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="col-sm-12 block-info-line" *ngIf="!frontConfig?.customBalance">
 				<div class="col-sm-3">
@@ -116,7 +116,7 @@
 				</div>
 			</div>	
 
-			<div class="col-sm-12 block-info-line" *ngIf="!frontConfig?.customBalance">
+			<!-- <div class="col-sm-12 block-info-line" *ngIf="!frontConfig?.customBalance">
 				<div class="col-sm-3">
 					<strong class="block-info-header">Delegated Bandwidth:</strong>
 				</div>
@@ -136,7 +136,7 @@
 					<span class="account-info"> Last vote weight: <small>{{ mainData?.voter_info?.last_vote_weight }}</small></span>
 					<span class="account-info"> Owner: <small>{{ mainData?.voter_info?.owner }}</small></span>
 				</div>
-			</div>
+			</div> -->
 			
 			<div class="col-sm-12 block-info-line" *ngIf="creator?.act?.data?.creator && !frontConfig?.customBalance">
 				<div class="col-sm-3">

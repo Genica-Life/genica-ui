@@ -29,52 +29,58 @@ module.exports 	= (router, config, request, log, mongoMain, MARIA) => {
 		}
 
 		async.parallel({
-			block: (cb) =>{
-        		global.eos.getBlock({ block_num_or_id: text })
-	   			 	.then(result => {
-	   			 		cb(null, result);
-	   			 	})
-	   			 	.catch(err => {
-	   			 		log.error(err);
-	   			 		cb(null, null);
-	   			 	});
-			},
-			transaction: (cb) =>{
-				global.eos.getTransaction({ id: text })
-	   			 	.then(result => {
-	   			 		cb(null, result);
-	   			 	})
-	   			 	.catch(err => {
-	   			 		cb(null, null);
-	   			 	});
-			},
+			// block: (cb) =>{
+        	// 	global.eos.getBlock({ block_num_or_id: text })
+	   		// 	 	.then(result => {
+	   		// 	 		cb(null, result);
+	   		// 	 	})
+	   		// 	 	.catch(err => {
+	   		// 	 		log.error(err);
+	   		// 	 		cb(null, null);
+	   		// 	 	});
+			// },
+			// transaction: (cb) =>{
+			// 	global.eos.getTransaction({ id: text })
+	   		// 	 	.then(result => {
+	   		// 	 		cb(null, result);
+	   		// 	 	})
+	   		// 	 	.catch(err => {
+	   		// 	 		cb(null, null);
+	   		// 	 	});
+			// },
 			account: (cb) =>{
-				global.eos.getAccount({ account_name: text })
-	   			 	.then(result => {
-	   			 		cb(null, result);
-	   			 	})
-	   			 	.catch(err => {
-	   			 		cb(null, null);
-	   			 	});
-			},
-			key: (cb) => {
-				global.eos.getKeyAccounts({ public_key: text })
-	   	 			.then(result => {
-	   	 				cb(null, result);
-	   	 			})
-	   	 			.catch(err => {
-	   	 				cb(null, null);
-	   	 			});
-			},
-			contract: (cb) =>{
-				global.eos.getCode({ json: true, account_name: text })
-	   	 			.then(result => {
-	   	 				cb(null, result)
-	   	 			})
-	   	 			.catch(err => {
-	   	 				cb(null, null);
-	   	 			});
+				result = {
+					account: {
+						account_name: text
+					}
+				}
+				cb(null, result);
+				// global.eos.getAccount({ account_name: text })
+	   			//  	.then(result => {
+	   			//  		cb(null, result);
+	   			//  	})
+	   			//  	.catch(err => {
+	   			//  		cb(null, null);
+	   			//  	});
 			}
+			// key: (cb) => {
+			// 	global.eos.getKeyAccounts({ public_key: text })
+	   	 	// 		.then(result => {
+	   	 	// 			cb(null, result);
+	   	 	// 		})
+	   	 	// 		.catch(err => {
+	   	 	// 			cb(null, null);
+	   	 	// 		});
+			// },
+			// contract: (cb) =>{
+			// 	global.eos.getCode({ json: true, account_name: text })
+	   	 	// 		.then(result => {
+	   	 	// 			cb(null, result)
+	   	 	// 		})
+	   	 	// 		.catch(err => {
+	   	 	// 			cb(null, null);
+	   	 	// 		});
+			// }
 		}, (err, result) => {
 			if (err){
 				log.error(err);

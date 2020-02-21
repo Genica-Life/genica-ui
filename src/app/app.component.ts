@@ -40,24 +40,25 @@ export class AppComponent implements OnInit {
         return console.log('Input is empty!');
     }
     text = text.replace(/ /g, '')
-      this.http.post('/api/v1/search', { text: text })
-               .subscribe((res :any) =>{
-                   if (res.block && !isNaN(+this.search)){
-                      this.router.navigate(['/block', res.block.block_num]);
-                   } else if (res.transaction){
-                      this.router.navigate(['/transaction', res.transaction.id]);
-                   } else if (res.account){
-                      this.router.navigate(['/account', res.account.account_name]);
-                   } else if (res.key){
-                      this.router.navigate(['/address', text ]);
-                   } else {
-                      this.router.navigate(['/notfound']);
-                   }
-                   this.search = '';
-               },
-               (err) =>{
-                   console.error(err);
-               });
+    this.router.navigate(['/account', text]);
+      // this.http.post('/api/v1/search', { text: text })
+      //          .subscribe((res :any) =>{
+      //              if (res.block && !isNaN(+this.search)){
+      //                 this.router.navigate(['/block', res.block.block_num]);
+      //              } else if (res.transaction){
+      //                 this.router.navigate(['/transaction', res.transaction.id]);
+      //              } else if (res.account){
+      //                 this.router.navigate(['/account', res.account.account_name]);
+      //              } else if (res.key){
+      //                 this.router.navigate(['/address', text ]);
+      //              } else {
+      //                 this.router.navigate(['/notfound']);
+      //              }
+      //              this.search = '';
+      //          },
+      //          (err) =>{
+      //              console.error(err);
+      //          });
   }
 
   getMainFrontConfig(){
