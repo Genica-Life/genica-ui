@@ -450,6 +450,24 @@ module.exports 	= (router, config, request, log, mongoMain, MARIA) => {
 	   	request.post({url:`${config.historyChain}/v1/history/get_controlled_accounts`, json: data }).pipe(res);
 	});
 
+
+	router.get('/api/v1/get_stakes/:table', (req, res) => {
+		let data = {
+			json: true,
+			code: "eosio.token",
+			scope: "eosio.token",
+			table: req.params.table,
+			table_key: "",
+			lower_bound: "",
+			upper_bound: "",
+			index_position: "",
+			key_type: "",
+			limit: 100,
+			reverse: false,
+			show_payer: false
+		};
+		request.post({url:`${config.historyChain}/v1/chain/get_table_rows`, json: data }).pipe(res);
+ 	});
 	/*
 	* router - get_actions by action name
 	* params - account_name, position, offset

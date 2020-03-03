@@ -21,6 +21,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { MainPageModule } from './pages/main_page/main_page.module';
 import { BlockPageModule } from './pages/block/block.module';
+import { StakePageModule } from './pages/stake/stake.module';
 import { TokensPageModule } from './pages/tokens/tokens.module';
 import { ProducersPageModule } from './pages/producers/producers.module';
 import { ProducerModule } from './pages/producer_page/producer_page.module';
@@ -84,6 +85,7 @@ const socketConfig: SocketIoConfig = { url: '/', options: {
     }),
     MainPageModule,
     BlockPageModule,
+    StakePageModule,
     TokensPageModule,
     AccountPageModule,
     AddressPageModule,

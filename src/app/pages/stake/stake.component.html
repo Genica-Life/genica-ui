@@ -1,0 +1,91 @@
+<div class="container">
+
+<div class="spinner-container" *ngIf="spinner">
+    <mat-spinner class="spinner-color"></mat-spinner>
+</div>
+
+	<h1 class="market-header">Total Supply {{ totalSupply }} 
+		
+	</h1>
+
+	<h1 class="market-header">Total Staked {{ totalStaked }} 
+		
+	</h1>
+
+	<div class="block-info">
+			<div class="col-sm-12">
+					<div class="example-container mat-elevation-z8 main-table block-trx-table" *ngIf="trxArr?.length">
+					
+					  <mat-table #table [dataSource]="dataSource">
+						
+						<!-- Name Column -->
+					    <ng-container matColumnDef="stakingtime">
+					      <mat-header-cell *matHeaderCellDef style="flex:1.2"> Staking Time</mat-header-cell>
+					      <mat-cell *matCellDef="let element" class="change-container"> 
+					            {{ moment(element?.stakingtime).format('MMMM Do YYYY, h:mm:ss a') }}
+					      </mat-cell>
+					    </ng-container>	
+
+					    <ng-container matColumnDef="key">
+					      <mat-header-cell *matHeaderCellDef> Account </mat-header-cell>
+					      <mat-cell *matCellDef="let element" style="flex:0.5">
+					          <strong>{{ element?.key }}</strong>
+					      </mat-cell>
+					    </ng-container>
+					    
+					     <ng-container matColumnDef="stakingamount">
+					      <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+					      <mat-cell *matCellDef="let element" class="text-center" style="flex:0.5">
+					          <strong>{{ element?.stakingamount }}</strong>
+					      </mat-cell>
+					    </ng-container>
+
+					    <!-- Name Column -->
+					    <!-- <ng-container matColumnDef="id" style="flex:2">
+					      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+					      <mat-cell *matCellDef="let element" class="marketcap-container">
+					          <a routerLink="/transaction/{{element?.hash}}" class="color-green tx-hash">{{ element?.hash }}</a>
+					       </mat-cell>
+					    </ng-container>
+					    
+					    <ng-container matColumnDef="status">
+					      <mat-header-cell *matHeaderCellDef> Status</mat-header-cell>
+					      <mat-cell *matCellDef="let element"> 
+					             <strong>{{element?.status}}</strong>
+					      </mat-cell>
+					    </ng-container>
+					   	
+
+					     Weight Column -->
+					    <!-- <ng-container matColumnDef="actions">
+					      <mat-header-cell *matHeaderCellDef class="actions-list-container" style="flex: 4 !important;"> Actions </mat-header-cell>
+					      <mat-cell *matCellDef="let element"> 
+					          	{{element?.actions}}-->
+								<!-- <div *ngFor="let action of element?.actions" class="actions-list-container" style="width: 520px;">
+								  
+								  <div class="actions-main-container" style="padding-left: 0px;">
+									<div class="actions-list">
+										<strong>{{ action?.name }}</strong>
+									</div>
+									<div class="actions-list">
+										<action-viewer [data]="action" [length]="50" class="color-light-grey"></action-viewer>
+									</div>
+								  </div>
+
+								</div>
+					      </mat-cell>
+					    </ng-container> --> -->
+
+					    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+					    	<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+					  	</mat-table>
+					
+					  	<mat-paginator #paginator
+					  	               [pageSize]="50"
+					  	               [pageSizeOptions]="[20, 50, 100]"
+					  	               showFirstLastButtons>
+					  	</mat-paginator>
+					</div>
+			</div>
+	</div>
+</div>
